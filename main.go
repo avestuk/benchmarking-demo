@@ -7,23 +7,24 @@ func CompareSlicesB(got, want []string) error {
 		unexpectedEntries = []string{}
 		notFoundEntries   = []string{}
 	)
+
+Got:
 	for _, entry := range got {
 		for _, wanted := range want {
 			if entry == wanted {
-				continue
+				continue Got
 			}
 		}
-
 		unexpectedEntries = append(unexpectedEntries, entry)
 	}
 
+Want:
 	for _, wanted := range want {
 		for _, entry := range got {
 			if entry == wanted {
-				continue
+				continue Want
 			}
 		}
-
 		notFoundEntries = append(notFoundEntries, wanted)
 	}
 
