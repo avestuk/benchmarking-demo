@@ -25,20 +25,20 @@ func BenchmarkCompareSliceB1000(b *testing.B)   { benchmarkCompareSlicesB(1000, 
 func BenchmarkCompareSliceB10000(b *testing.B)  { benchmarkCompareSlicesB(10000, b) }
 func BenchmarkCompareSliceB100000(b *testing.B) { benchmarkCompareSlicesB(100000, b) }
 
-func BenchmarkCompareSliceA1(b *testing.B)       { benchmarkCompareSliceA(1, b) }
-func BenchmarkCompareSliceA2(b *testing.B)       { benchmarkCompareSliceA(2, b) }
-func BenchmarkCompareSliceA4(b *testing.B)       { benchmarkCompareSliceA(4, b) }
-func BenchmarkCompareSliceA10(b *testing.B)      { benchmarkCompareSliceA(10, b) }
-func BenchmarkCompareSliceA100(b *testing.B)     { benchmarkCompareSliceA(100, b) }
-func BenchmarkCompareSliceA1000(b *testing.B)    { benchmarkCompareSliceA(1000, b) }
-func BenchmarkCompareSliceA10000(b *testing.B)   { benchmarkCompareSliceA(10000, b) }
-func BenchmarkCompareSliceA100000(b *testing.B)  { benchmarkCompareSliceA(100000, b) }
-func BenchmarkCompareSliceA1000000(b *testing.B) { benchmarkCompareSliceA(1000000, b) }
+func BenchmarkCompareSliceA1(b *testing.B)       { benchmarkCompareSlicesA(1, b) }
+func BenchmarkCompareSliceA2(b *testing.B)       { benchmarkCompareSlicesA(2, b) }
+func BenchmarkCompareSliceA4(b *testing.B)       { benchmarkCompareSlicesA(4, b) }
+func BenchmarkCompareSliceA10(b *testing.B)      { benchmarkCompareSlicesA(10, b) }
+func BenchmarkCompareSliceA100(b *testing.B)     { benchmarkCompareSlicesA(100, b) }
+func BenchmarkCompareSliceA1000(b *testing.B)    { benchmarkCompareSlicesA(1000, b) }
+func BenchmarkCompareSliceA10000(b *testing.B)   { benchmarkCompareSlicesA(10000, b) }
+func BenchmarkCompareSliceA100000(b *testing.B)  { benchmarkCompareSlicesA(100000, b) }
+func BenchmarkCompareSliceA1000000(b *testing.B) { benchmarkCompareSlicesA(1000000, b) }
 
 // Global variable here to stop the compiler optimizing our function calls away
 var err error
 
-func benchmarkCompareSliceA(i int, b *testing.B) {
+func benchmarkCompareSlicesA(i int, b *testing.B) {
 	b.StopTimer()
 
 	got := generateSlice(i)
